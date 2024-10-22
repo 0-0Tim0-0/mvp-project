@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<section class="all-posts-list">
+    {% for job in jobs %}
+    <a href="{% url 'rent_detail_page' pk=job.pk %}" class="post">
+        <img src="{{job.image}}" alt="" class="post-image">
+        <div class="post-text">
+            <div class="post-title">{{ job.title }}</div>
+            <div class="post-description-line">
+                <span class="post-description">Цена:</span>
+                <span class="post-description">
+                    {% if job.salary == "не указано" %}
+                    {{ job.salary }}
+                    {% else %}
+                    {{ job.salary }} &#8376;
+                    {% endif %}
+                </span>
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+</section>
+{% else %}
+<section class="access">
+    <div class="container">
+        <div class="access-title">
+            <h1>Пожалуйста, авторизуйтесь T-T</h1>
+            <p>Вы не можете увидеть вакансии, без авторизации :D</p>
+            <div class="access-button"> 
+                <a href="{% url 'login_page' %}" class="just-button">Авторизация</a>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+{% endif %}
+
+{% endblock %}

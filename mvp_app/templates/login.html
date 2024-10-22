@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Регистрация{% endblock %}
+
+{% block content %}
+
+
+<section class="_register-block">
+    <h2 class="_register-text">Вход</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button class="_register-button">Войти</button>
+        <a href="{% url 'sign_up_page' %}"class="_register-button">Регистрация</a>
+    </form>
+    
+</section>
+
+{% endblock %}

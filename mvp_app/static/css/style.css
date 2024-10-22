@@ -1,0 +1,420 @@
+/*Nunito Sans*/
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+/*Inter*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+*{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+button {
+	border: none;
+	cursor: pointer;
+}
+input {
+	border: none;
+}
+input:focus {
+	outline: none;
+}
+li, ul{
+	list-style: none;
+}
+:root {
+ --bluesky: #4CC6FB;
+ --blue: #134cdd;
+ --black :#000;
+ --lightblue: #ACE6FF;
+ --verylightblue:#CFF1FF;
+ --grey:#A9A9A9;
+ --darkenlight:#d9d9d9;
+ --softgrey:#8C8181;
+ --quitegrey:#4d4d4d;
+ --lightblack:#333;
+ --white: #fff;
+ --red: #cf535e;
+
+}
+
+.nunito-sans-font{
+	font-family: "Nunito Sans", sans-serif;
+}
+
+
+
+
+/*Блок содержащий все кнопки для выбора категорий*/
+.categories-buttons-block{
+	color: var(--black);
+	text-decoration: none;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	margin: 23px 21px 0px;
+	padding-bottom: 18px;
+	border-bottom: 2px solid var(--black);
+	gap: 17px 22px;
+}
+/*Каждая отдельная кнопка для выбора категории*/
+.category-button{
+	color: var(--black);
+	text-decoration: none;
+	cursor: pointer;
+	width: 73px;
+	height: 76px;
+	background-color: var(--lightblue);
+	border: 1px solid var(--verylightblue);
+	border-radius: 11px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	word-wrap: break-word;
+
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+/*Иконка категории*/
+.category-icon{
+	padding-bottom: 2px;
+}
+/*Текст внутри кнопки категории*/
+.category-text{
+	color: var(--black);
+	text-decoration: none;
+	font-family: "Inter", sans-serif;
+	font-size: 10px;
+	text-align: center;
+}
+
+
+
+
+
+
+/*Блок содержащий все посты*/
+.all-posts-list{
+	margin: 40px 21px 80px;
+	font-family: "Inter", sans-serif;
+}
+/*Блок содержащий один пост*/
+.post{
+	text-decoration: none;
+	display: flex;
+	margin-bottom: 24px;
+	color: var(--black);
+	cursor: pointer;
+}
+/*Картинка внутри поста*/
+.post-image{
+	display: block;
+	border: 1px solid var(--black);
+	width: 140px;
+	height: 140px;
+	border-radius: 14px;
+	margin-right: 10px;
+	flex-shrink: 0;
+	object-fit: cover;
+}
+/*Текст внутри поста, включает и название и описание*/
+.post-text{
+	flex-direction: column;
+	font-weight: 500;
+	font-size: 20px;
+}
+/*Название/описание - внутри текста поста*/
+.post-title, .post-description{
+	margin-bottom: 16px;
+}
+.post-description-line {
+	margin-bottom: 16px;
+	border-bottom: 2px solid var(--black);
+}
+
+/*Если содержит account-header значит относится к страницам регистрации, входа и кабинета*/
+/*Содержит все элементы header*/
+.account-header{
+	height: 52px;
+   margin: 0 16px;
+}
+/*Для подчеркивания текста как на макете*/
+.account-header-container {
+	height: 100%;
+    padding: 0 9px 0;
+    border-bottom: 1px solid var(--softgrey);
+}
+/*Header текст*/
+.account-header-text {
+	padding: 18px 0 0;
+    font-size: 18px;
+	font-weight: bold;
+	font-family: "Nunito Sans", sans-serif;
+}
+
+/*Для бэка на base с ником*/
+.access-title {
+	padding: 18px 0 0;
+    font-size: 18px;
+	font-weight: bold;
+	font-family: "Nunito Sans", sans-serif;
+}
+
+
+
+.access {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background-color: var(--red);
+}
+.access-button {
+	display: block;
+	justify-content: center;
+	text-decoration: none;
+	text-align: center;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 6px 2px rgba(0, 0, 0, 0.15);
+	background-color: var(--darkenlight);
+	border-radius: 11px;
+	margin-top: 17px;
+	height: 32px;
+	width: 50%;
+	margin-left: 100px;
+	font-size: 14px;
+}
+.just-button {
+	text-decoration: none;
+}
+
+.account-info{
+    display: flex;
+    font-family: "Inter", sans-serif;
+    margin: 15px 21px 0;
+    padding-bottom: 15px;
+    
+}
+.account-icon{
+    margin-right: 15px;
+}
+.account-info-text{
+    display: flex;
+    flex-direction: column;
+	text-decoration: none;
+}
+.account-name {
+	text-decoration: none;
+	font-size: 18px;
+}
+
+
+/*Блок содержит весь контент (кроме header и footer) на странице register и login*/
+._register-block{
+	margin: 90px 0 0;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+/*Текст "регистрация/вход" на странице register и login*/
+._register-text{
+	font-family: "Nunito Sans", sans-serif;
+	font-weight: 300;
+	font-size: 26px;
+	margin: 0 0 37px;
+}
+/*Каждое отдельное поле ввода на страницах register и login*/
+._register-input{
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 6px 2px rgba(0, 0, 0, 0.15);
+	font-size: 14px;
+	display: block;
+	padding-left: 15px;
+	height: 36px;
+	width: 85%;
+	border-radius: 11px;
+	border: 1px solid rgba(97, 82, 82, 0.52);
+	color: var(--grey);
+}
+/*Поле ввода пароля (для отступа между полями ввода)*/
+.password-input{
+	margin-top: 15px;
+}
+/*Для декораций во время нажатия на поле ввода на странице register и login*/
+._register-input:focus{
+	outline: 1px solid rgba(97, 82, 82, 0.52);
+}
+/*Кнопки на страницах register и login*/
+._register-button{
+	display: flex;
+	justify-content: center;
+	text-decoration: none;
+	text-align: center;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 6px 2px rgba(0, 0, 0, 0.15);
+	background-color: #d9d9d9;
+	border-radius: 11px;
+	margin-top: 17px;
+	height: 32px;
+	width: 100%;
+	color: var(--grey);
+	font-size: 14px;
+}
+
+/*На странице account надпись "Мои объявления" (точнее это контейнер который содержит блок с текстом)*/
+.my-posts-text{
+	display: flex;
+	justify-content: center;
+	margin: 22px 0 36px;
+	font-family: "Nunito Sans", sans-serif;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+
+
+
+
+/*Если содержит post-details значит относится к странице поста (не обязательно)*/
+/*Отступ для названия и картинки*/
+.post-details-top-container{
+	margin: 23px 21px 0;
+}
+/*Название*/
+.post-details-title{
+	padding: 0 6px;
+	font-size: 28px;
+	font-weight: 800;
+}
+/*Картинка (высота блока будет равна высоте картинки)*/
+.post-details-image{
+	margin: 23px 0 21px;
+	min-width: 230px;
+	max-width: 450px;
+	width: 100%;
+	border-radius: 21px;
+	object-fit: cover;
+}
+/*Полоска под картинкой (да, по другому не получилось)*/
+.post-detail-image-border{
+	width: 100%;
+	height: 2px;
+	background-color: var(--black);
+}
+/*Отступ для основного контента ниже картинки*/
+.post-details-main-container{
+	margin: 0 31px;
+}
+/*Цена (содержит текст "цена" и число, так как у них разные стили)*/
+.post-details-price{
+	padding-top: 28px;
+	font-size: 23px;
+}
+/*Число (на макете 500 тг)*/
+.post-details-price-number{
+	font-weight: 300;
+}
+/*Надпись "описание товара"*/
+.post-details-description-title{
+	font-size: 16px;
+	font-weight: bold;
+	margin-top: 22px;
+}
+/*Само описание товара*/
+.post-details-description-text{
+	font-size: 16px;
+}
+/*Имя автора*/
+.post-details-author{
+	font-size: 23px;
+	margin-top: 22px;
+}
+/*Контакты*/
+.post-detail-contacts{
+	margin-top: 37px;
+	font-size: 23px;
+}
+/*Обращение к строкам контактов (номеру и инсте)*/
+.contacts-number, .contacts-instagram{
+	font-size: 16px;
+	font-weight: 200;
+}
+/*Обращение к картинкам слева (чтобы ровно стояли)*/
+.contacts-number img, .contacts-instagram img{
+	position: relative;
+	top: 2px;
+}
+/**Содержит последний блок с датой, лайками и просмотрами*/
+.post-details-date-likes-views{
+	display: flex;
+	flex-wrap: wrap;
+	margin: 40px 0 100px;
+	font-weight: 200;
+	font-size: 15px;
+	color: var(--black);
+}
+/*Дата*/
+.post-details-date, .post-details-likes{
+	color: var(--black);
+	margin-right: 35px;
+}
+/*Обращение к иконкам лайка и просмотра*/
+.post-details-views img, .post-details-likes img{
+	position: relative;
+	top: 3px;
+}
+/*Футер (тот что снизу - всегда на экране)*/
+.footer {
+    position: fixed;
+    bottom: 0; 
+    left: 0;
+    height: 80px;
+    width: 100%; 
+    background-color: var(--lightblack); 
+    border-radius: 10px 10px 0 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+/*Обращение к каждой кнопке внутри футера (внутри кнопок лежат картинки дома плюса и человека)*/
+.footer button{
+	width: 39px;
+	height: 39px;
+	background-color: transparent;
+	color: var(--white);
+}
+
+._register-block form {
+	margin: 20px 0;
+	
+	
+
+}
+._register-block label {
+	display: block;
+	margin-bottom: 10px;
+	font-family: "Nunito Sans", sans-serif;
+	font-weight: 300;
+	font-size: 20px;
+	
+	
+}
+._register-block input {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 100%;
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 6px 2px rgba(0, 0, 0, 0.15);
+	font-size: 14px;
+	padding: 10px;
+	margin-right: 5px;
+	height: 36px;
+	width: 100%;
+	border-radius: 11px;
+	border: 1px solid rgba(97, 82, 82, 0.52);
+	color: var(--grey);
+	
+}
+
+/* ВАЖНАЯ ВЕЩЬ ДЛЯ РЕГИСТРА */
+.helptext {
+	display: none;
+}

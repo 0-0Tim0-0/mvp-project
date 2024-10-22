@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}{{ job.title }}{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+
+
+<section class="nunito-sans-font">
+    <div class="post-details-top-container">
+        <div class="post-details-title">{{ job.title }}</div>
+        <img src="{{job.image}}" alt="" class="post-details-image">
+        <div class="post-detail-image-border"></div>
+    </div>
+    <div class="post-details-main-container">
+        <div class="post-details-price">
+            <span class="post-details-price-text">Цена:</span>
+            <span class="post-details-price-number">
+                {% if job.salary == "не указано" %}
+                {{ job.salary }}
+                {% else %}
+                {{ job.salary }} &#8376;
+                {% endif %}
+            </span>
+        </div>
+        <div class="post-details-description-title">Описание товара:</div>
+        <div class="post-details-description-text">{{ job.description }}</div>
+        <div class="post-details-author">{{ job.clientname }}</div>
+        <div class="post-details-author">{{ job.address }}</div>
+        <div class="post-detail-contacts">
+            Контакты
+            <ul class="contacts-list">
+                <li class="contacts-number">
+                    <img src="{% static 'img/telephone.svg' %}" alt="">
+                    {{ job.phone }}
+                </li>
+                <li class="contacts-instagram">
+                    <img src="{% static 'img/instagram.svg' %}" alt="">
+                    {{ job.insta }}
+                </li>
+            </ul>
+        </div>
+        <div class="post-details-date-likes-views">
+            <div class="post-details-date">{{ job.created_at |date:"d.m.y" }}</div>
+            <div class="post-details-likes">
+                <img src="{% static 'img/like.svg' %}" alt="" class="post-details-like-icon">
+                <span class="post-details-likes-amount">{{ job.like }}</span>
+            </div>
+            <div class="post-details-views">
+                <img src="{% static 'img/view.svg' %}" alt="" class="post-details-views-icon">
+                <span class="post-details-views-amount">{{ job.view }}</span>
+            </div>
+        </div>
+    </div>
+
+</section>
+{% else %}
+<section class="access">
+    <div class="container">
+        <div class="access-title">
+            <h1>Пожалуйста, авторизуйтесь T-T</h1>
+            <p>Вы не можете увидеть вакансии, без авторизации :D</p>
+            <div class="access-button"> 
+                <a href="{% url 'login_page' %}" class="just-button">Авторизация</a>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+{% endif %}
+{% endblock %}

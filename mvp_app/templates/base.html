@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{% block title %}{% endblock %}</title>
+	<link rel="stylesheet" href="{% static './css/style.css'%}">
+</head>
+
+<body>
+	<header class="header">
+		<div class="account-info">
+			<button style="background-color: transparent;" onclick="pls_work()" >
+				<img src="{% static './img/account.svg'%}" alt="" class="account-icon">
+			</button>
+			{% if not user.is_authenticated %}
+			<div id="username" style="display: none;">
+				<div class="account-name"><span>Пожалуйста,</span><a href="{% url 'login_page' %}"class="account-name">авторизуйтесь</a></div>
+				{% else %}
+				<div id="username" style="display: none;">
+				<div class="account-info-text">
+					<span class="account-name"><span>Приветствую, </span>{{user.username}} </span>
+					<div><a href="{% url 'logout_action' %}"class="account-name">Выйти из аккаунта</a></div>
+				</div>
+			</div>
+			
+		
+		</div>
+        <section class="categories-buttons-block">
+			{% for category in categories %}
+			<a href="{% url 'rents_by_category_page' slug=category.slug %}" class="category-button" >
+				<span class="category-text">{{ category.name }}</span>
+			</a>
+			{% endfor %}
+		</section>
+		{% endif %}
+    </header>
+    <main>
+		{% block content %}
+        {% endblock %}
+
+
+
+
+
+
+        <footer class="footer">
+			<a href="{% url 'home_page' %}" class="footer-home">
+				<img src="{% static './img/footer-home.svg'%}" alt="">
+			</a>			
+			<a href="{% url 'rents_page' %}"class="footer-plus">
+				<img src="{% static './img/jobs.svg'%}" alt="">
+			</a>
+			<a href="{% url 'login_page' %}"class="footer-human">
+				<img src="{% static './img/footer-human.svg'%}" alt="">
+			</a>
+		</footer>
+	</main>
+	
+	<script src="{% static './js/congrats.js' %}"></script>
+
+</body>
+</html
